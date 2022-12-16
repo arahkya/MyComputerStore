@@ -1,0 +1,61 @@
+﻿<div class="card" style="width: 18rem;">
+    <img src="/img/asus-tuf-rtx3080ti-o12g-box-large.jpg" class="w-50 card-img-top my-3 mx-auto" alt="...">
+    <div class="card-body d-flex flex-column">
+        <NavLink href="#" class="card-title fw-bold fs-5 mx-auto">@Title</NavLink>
+        <p class="card-text mt-1" style="text-overflow: ellipsis; white-space:normal;display: -webkit-box !important; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow:hidden;">@Description</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <div class="my-auto">
+            <span>ราคา&nbsp;</span>
+            <span class="text-danger ms-auto fw-bolder">@Price</span>
+            <span>&nbsp;บาท</span>
+        </div>
+        @if (IsOutOfStock)
+        {
+            <span class="btn"><i class="fa-solid fa-cart-plus"></i></span>
+        }
+        else
+        {
+            <a href="#" class="btn btn-primary"><i class="fa-solid fa-cart-plus"></i></a>
+        }
+    </div>
+
+    <div class="position-absolute text-muted p-2" title="Views">
+        <i class="fa-solid fa-eye"></i>
+        <span>15</span>
+    </div>
+    <div class="position-absolute text-muted p-2" style="top:30px;" title="Buyed">
+        <i class="fa-solid fa-sack-dollar"></i>
+        <span>30</span>
+    </div>
+    <div class="position-absolute text-muted p-2" style="top:60px;" title="Comment">
+        <i class="fa-solid fa-comments"></i>
+        <span>75</span>
+    </div>
+    <div class="position-absolute text-muted p-2" style="top:90px;" title="Images">
+        <i class="fa-solid fa-image"></i>
+        <span>7</span>
+    </div>
+    <div class="position-absolute text-muted p-2" style="top:120px;" title="Promotion">
+        <i class="fa-solid fa-bolt"></i>
+        <span>2</span>
+    </div>
+    <div class="position-absolute text-muted p-2" style="top:150px;" title="Price Down">
+        <i class="fa-solid fa-arrow-trend-down"></i>
+        <span>2</span>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "N/A";
+
+    [Parameter]
+    public string Description { get; set; } = "N/A";
+
+    [Parameter]
+    public string Price { get; set; } = "N/A";
+
+    [Parameter]
+    public bool IsOutOfStock { get; set; } = true;
+}

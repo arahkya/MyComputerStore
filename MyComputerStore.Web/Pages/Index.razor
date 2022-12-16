@@ -1,0 +1,47 @@
+﻿@page "/"
+
+<header class="ps-4 mb-3">
+    <span class="fs-6 text-muted">Home</span>
+</header>
+<aside class="col-2">
+    <ul class="nav flex-column ps-2">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">New Arrivals</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Promotions</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Hot Focus</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled">Most Buy</a>
+        </li>
+    </ul>
+</aside>
+<main class="col-10">
+    <h3>New Arrivals</h3>
+    
+    <section>
+        <CardGridComponent Items="Items"></CardGridComponent>
+    </section>
+</main>
+
+@code {
+    [Parameter]
+    public List<CardModel> Items { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.CompletedTask;
+
+        for (int i = 0; i < 100; i++)
+        {
+            Items.Add(new CardModel
+                {
+                    Title = "Item " + i,
+                    Description = "Ultricies tristique nulla aliquet enim tortor at auctor. Diam maecenas ultricies mi eget. Ac turpis egestas maecenas pharetra convallis posuere. Nisi lacus sed viverra tellus in hac habitasse. Sed nisi lacus sed viverra tellus. Mi ipsum faucibus vitae aliquet nec ullamcorper. Placerat vestibulum lectus mauris ultrices eros in cursus. Suscipit tellus mauris a diam maecenas sed enim ut sem. Nec dui nunc mattis enim ut tellus elementum sagittis. Volutpat diam ut venenatis tellus in metus vulputate. Suspendisse potenti nullam ac tortor vitae purus. Et magnis dis parturient montes nascetur ridiculus mus. Facilisi cras fermentum odio eu feugiat."
+                });
+        }
+    }
+}

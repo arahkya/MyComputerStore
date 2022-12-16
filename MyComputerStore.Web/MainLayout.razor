@@ -1,0 +1,30 @@
+﻿@inherits LayoutComponentBase
+
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Computer Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/" Match="NavLinkMatch.Prefix">Home</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/product" Match="NavLinkMatch.Prefix">Product</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/member" Match="NavLinkMatch.Prefix">Member</NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="/member" Match="NavLinkMatch.Prefix">Contact Us</NavLink>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="row mt-3">
+    @Body
+</section>

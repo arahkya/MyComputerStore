@@ -1,0 +1,13 @@
+﻿<div class="row gy-5">
+    @foreach (CardModel item in Items)
+    {
+        <div class="col">
+            <CardComponent Title="@item.Title" Description="@item.Description"></CardComponent>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<CardModel> Items { get; set; } = new();
+}
